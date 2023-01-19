@@ -1,0 +1,479 @@
+:root {
+  --color: #0d1424;
+  --bg-color: #f7f0f7;
+}
+
+::selection {
+  background-color: var(--color);
+  color: var(--bg-color);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.dark {
+  --color: #f7f0f7;
+  --bg-color: #0d1424;
+  background-color: var(--bg-color);
+  color: var(--color);
+}
+
+/* Section Header */
+.section-header {
+  font-size: 3rem;
+  position: relative;
+  width: fit-content;
+  margin-left: 10px;
+  margin-bottom: 10rem;
+  transition: 0.4s;
+}
+
+@media (max-width: 767px) {
+  .section-header {
+    font-size: 2rem;
+  }
+}
+
+.section-header::before,
+.section-header::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  font-size: 2.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color);
+  transition: 0.4s;
+}
+.section-header::before {
+  top: 10px;
+}
+.section-header::after {
+  top: 35px;
+}
+
+@media (max-width: 767px) {
+  .section-header::before {
+    top: 5px;
+  }
+  .section-header::after {
+    top: 25px;
+  }
+}
+
+.section-header:hover::before {
+  left: -15px;
+  top: 50%;
+}
+
+.section-header:hover::after {
+  top: 50%;
+}
+/* Section Header */
+
+a {
+  text-decoration: none;
+}
+img {
+  min-width: 100%;
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--color);
+  transition-duration: 0.2s;
+}
+.container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+  padding-block: 1rem;
+}
+
+.height-100 {
+  min-height: 100vh;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* ==================== Main ==================== */
+
+.navbar {
+  border-bottom: 2px solid var(--color);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.5rem;
+}
+
+.nav-logo {
+  font-size: 3rem;
+}
+
+.navbar .burger-icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.navbar .links {
+  padding-inline: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  z-index: 10;
+  transform: translateX(100%);
+  transition-duration: 0.4s;
+}
+
+.show-links {
+  transform: translateX(0%) !important;
+}
+
+.hide-links {
+  transform: translateX(-100%) !important;
+}
+
+.navbar .links .close-icon {
+  position: absolute;
+  top: 5%;
+  right: 8%;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.navbar .links ul {
+  position: relative;
+  top: 20%;
+  left: 30%;
+  max-width: 20rem;
+}
+
+.navbar .links ul li.link {
+  position: relative;
+  padding-block: 25px;
+  max-width: fit-content;
+}
+
+.navbar .links ul li.link a {
+  font-size: 2.5rem;
+  color: var(--color);
+}
+
+.navbar .links ul li.link::after {
+  content: "";
+  position: absolute;
+  transition-duration: 0.4s;
+  right: 0;
+  top: 70%;
+  height: 2px;
+  width: 0;
+  background-color: var(--color);
+}
+
+.navbar .links ul li.link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ============== Intro Section ============== */
+
+.intro-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.intro-section .intro-text {
+  margin-block: 1rem;
+}
+
+.intro-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.intro-section p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.intro-section p span {
+  font-family: "Crafty Girls", cursive;
+  font-size: 2rem;
+  font-weight: 200;
+  padding-inline: 0.5rem;
+}
+
+/* ============== Simple Section ============== */
+.simple-section {
+  margin-block: 4rem;
+}
+
+.simple-section h3 {
+  font-family: "Crafty Girls", cursive;
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .simple-section h3 {
+    font-size: 2.5rem;
+  }
+}
+
+/* ============== Skills Section ============== */
+
+.skills-section .skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  background-color: var(--color);
+  border-radius: 0.5rem;
+}
+
+.skill {
+  margin: 1rem;
+  padding: 2rem 3rem;
+  background-color: var(--bg-color);
+}
+
+.html {
+  -webkit-mask: url(../icons/icons8-html-5-50.svg) no-repeat center;
+  mask: url(../icons/icons8-html-5-50.svg) no-repeat center;
+}
+.css {
+  -webkit-mask: url(../icons/icons8-css3-50.svg) no-repeat center;
+  mask: url(../icons/icons8-css3-50.svg) no-repeat center;
+}
+.js {
+  -webkit-mask: url(../icons/icons8-javascript-logo-50.svg) no-repeat center;
+  mask: url(../icons/icons8-javascript-logo-50.svg) no-repeat center;
+}
+.git {
+  -webkit-mask: url(../icons/icons8-git-50.svg) no-repeat center;
+  mask: url(../icons/icons8-git-50.svg) no-repeat center;
+}
+.sass {
+  -webkit-mask: url(../icons/icons8-sass-50.svg) no-repeat center;
+  mask: url(../icons/icons8-sass-50.svg) no-repeat center;
+}
+.react {
+  -webkit-mask: url(../icons/icons8-react-native-50.svg) no-repeat center;
+  mask: url(../icons/icons8-react-native-50.svg) no-repeat center;
+}
+
+/* ============== Projects Section ============== */
+
+.projects-section .projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.project-card {
+  position: relative;
+  max-width: 15rem;
+  margin: 1rem;
+  border-radius: 3px;
+  background-color: var(--color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 767px) {
+  .project-card {
+    margin: 1rem auto;
+  }
+}
+
+.project-card .project-img img {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.project-card .project-text {
+  padding: 1rem 2rem;
+}
+
+.project-card .project-text p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.project-card .project-text .go-to {
+  position: relative;
+  color: var(--bg-color);
+}
+.project-card .project-text .go-to::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-radius: 1px;
+  bottom: -5px;
+  left: 0;
+  animation: go 1s infinite ease-in-out;
+}
+.project-card .project-text .go-to::after {
+  content: "";
+  position: absolute;
+  transform: rotate(45deg);
+  border-color: var(--bg-color) var(--bg-color) transparent transparent;
+  bottom: -8px;
+  left: 30px;
+  border-width: 6px;
+  border-top: 3px solid var(--bg-color);
+  border-right: 3px solid var(--bg-color);
+  border-style: dashed;
+  animation: go 1s infinite ease-in-out;
+}
+
+@keyframes go {
+  0%,
+  100% {
+    translate: 0;
+  }
+  50% {
+    translate: 10px;
+  }
+}
+
+.coming-soon {
+  filter: blur(1px);
+  user-select: none;
+}
+
+.coming-soon .go-to {
+  visibility: hidden;
+}
+
+.coming-soon .go-to::before,
+.coming-soon .go-to::after {
+  animation: none !important;
+}
+
+.coming-soon-word {
+  width: 100%;
+  font-size: 2.5rem;
+  color: var(--bg-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+/* ============== theme & scroll to top arrow styles ============== */
+
+.theme {
+  position: fixed;
+  right: 8px;
+  top: 100px;
+  z-index: 100;
+  transition-duration: 0.2s;
+  transition-delay: 0.1s;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: var(--color);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: rotate(90deg);
+}
+
+.fa-moon {
+  color: var(--bg-color);
+}
+
+.fa-sun {
+  color: var(--bg-color);
+}
+
+.checkbox-label .ball {
+  background-color: var(--bg-color);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  padding: 5px 10px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.scroll-to-top .fa-arrow-up {
+  animation: scroll 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes scroll {
+  0%,
+  100% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
