@@ -32,6 +32,7 @@
   margin-left: 10px;
   margin-bottom: 10rem;
   transition: 0.4s;
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {
@@ -243,11 +244,13 @@ body {
 /* ============== Simple Section ============== */
 .simple-section {
   margin-block: 4rem;
+  display: grid;
+  place-content: center;
 }
 
 .simple-section h3 {
   font-family: "Crafty Girls", cursive;
-  font-size: 4rem;
+  font-size: 4.5rem;
   text-align: center;
 }
 
@@ -270,7 +273,7 @@ body {
 }
 
 .skill {
-  margin: 1rem;
+  margin: 2rem;
   padding: 2rem 3rem;
   background-color: var(--bg-color);
 }
@@ -291,6 +294,10 @@ body {
   -webkit-mask: url(../icons/icons8-git-50.svg) no-repeat center;
   mask: url(../icons/icons8-git-50.svg) no-repeat center;
 }
+.github {
+  -webkit-mask: url(../icons/icons8-git-50.svg) no-repeat center;
+  mask: url(../icons/icons8-git-50.svg) no-repeat center;
+}
 .sass {
   -webkit-mask: url(../icons/icons8-sass-50.svg) no-repeat center;
   mask: url(../icons/icons8-sass-50.svg) no-repeat center;
@@ -299,7 +306,14 @@ body {
   -webkit-mask: url(../icons/icons8-react-native-50.svg) no-repeat center;
   mask: url(../icons/icons8-react-native-50.svg) no-repeat center;
 }
-
+.tailwind {
+  -webkit-mask: url(../icons/icons8-tailwind-css.svg) no-repeat center;
+  mask: url(../icons/icons8-tailwind-css.svg) no-repeat center;
+}
+.bootstrap {
+  -webkit-mask: url(../icons/icons8-bootstrap.svg) no-repeat center;
+  mask: url(../icons/icons8-bootstrap.svg) no-repeat center;
+}
 /* ============== Projects Section ============== */
 
 .projects-section .projects-container {
@@ -317,6 +331,7 @@ body {
   border-radius: 3px;
   background-color: var(--color);
   color: var(--bg-color);
+  min-height: 18rem;
 }
 
 @media (max-width: 767px) {
@@ -328,6 +343,8 @@ body {
 .project-card .project-img img {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .project-card .project-text {
@@ -337,7 +354,7 @@ body {
 .project-card .project-text p {
   font-size: 1.5rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .project-card .project-text .go-to {
@@ -402,6 +419,51 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
 }
+
+.about-section {
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 1.7;
+}
+.about-section .section-header::before {
+  top: 20px;
+}
+.about-section .section-header::after {
+  top: 45px;
+}
+
+.about-section .section-header:hover::before {
+  left: -15px;
+  top: 50%;
+}
+
+.about-section .section-header:hover::after {
+  top: 50%;
+}
+
+.about-section h5,
+.about-section p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-me {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-120%);
+  background-color: var(--color);
+  color: var(--bg-color);
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  transition-duration: 0.4s;
+}
+
+.about-section p.contact-text:hover ~ .contact-me {
+  transform: translateX(100%);
+}
+
 /* ============== theme & scroll to top arrow styles ============== */
 
 .theme {
